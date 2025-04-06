@@ -2,10 +2,11 @@ import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 
 import connectDB from "./db/index.js";
+import { app } from "./app.js";
 import express from "express";
 
 console.log(process.env.MONGODB_URI ? "URI available" : "URI not available");
-const app = express();
+
 
 const port = process.env.PORT || 8000;
 
@@ -18,6 +19,8 @@ connectDB()
   .catch((err) => {
     console.error("error while connecting to database", err);
   });
+
+
 
 // (async ()=>{
 //     try {

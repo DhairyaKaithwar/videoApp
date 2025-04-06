@@ -1,8 +1,8 @@
-const asyncHadele = (fn) => (req, res, next) => {
-  fn(req, res, next).then;
-};
+// const asyncHadele = (fn) => (req, res, next) => {
+//   fn(req, res, next).then;
+// };
 
-const asyncHadeler = (fn) => async (req, res, next) => {
+const asyncHandler = (fn) => async (req, res, next) => {
   try {
     await fn(req, res, next);
   } catch (err) {
@@ -13,4 +13,4 @@ const asyncHadeler = (fn) => async (req, res, next) => {
   }
 };
 
-export { asyncHadeler };
+export { asyncHandler };
